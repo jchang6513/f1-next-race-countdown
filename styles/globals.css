@@ -21,6 +21,7 @@ body {
   color: #fff;
   font-family: f1, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
 }
 
 a {

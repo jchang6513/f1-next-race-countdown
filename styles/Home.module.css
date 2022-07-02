@@ -33,6 +33,12 @@
   padding-bottom: 16px;
 }
 
+@media (min-width: 1680px) {
+  .main {
+    transform: scale(1.5);
+  }
+}
+
 @media (max-width: 1200px) {
   .main {
     margin: 0 32px;
