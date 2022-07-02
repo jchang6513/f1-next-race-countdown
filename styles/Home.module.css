@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -12,6 +11,7 @@
 .raceName {
   font-family: f1-wide;
   font-size: 4rem;
+  padding-left: 2rem;
 }
 
 .title {
@@ -29,7 +29,7 @@
   margin-right: 12px;
   line-height: 1.15;
   font-size: 4rem;
-  padding: 36px;
+  padding: 2rem;
   padding-bottom: 16px;
 }
 
@@ -37,16 +37,19 @@
   border-top: 2px solid #38383f;
   display: flex;
   flex: 1 0 0;
-  justify-content: space-between;
+  justify-content: end;
   text-align: center;
-  padding: 8px 8px 0 36px;
+  padding: 8px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 0 0 calc(25% - 8px);
+  align-items: center;
+  flex: 0 0 calc(24% - 8px);
+  margin: 0 4px;
+  max-width: calc(24% - 8px);
 }
 
 .section p {
@@ -55,18 +58,19 @@
 
 .section p:first-child {
   font-family: f1-bold;
-  font-size: 48px;
+  font-size: 3.2rem;
   margin-bottom: 8px;
 }
 
 .section p:last-child {
   color: #949498;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .grid {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: calc(100% + 16px);
@@ -81,7 +85,7 @@
   text-decoration: none;
   background: #15151e;
   border-radius: 10px;
-  flex: 0 0 calc(20% - 16px);
+  flex: 0 0 calc(20% - 20px);
 }
 
 .card h2 {
@@ -89,7 +93,7 @@
   border-radius: 20px;
   padding: 8px 24px;
   margin: 0 0 1rem 0;
-  font-size: 14px;
+  font-size: 1rem;
   white-space: nowrap;
   text-align: center;
 }
@@ -100,9 +104,216 @@
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.arrow {
+  display: none
+}
+
+@media (max-width: 1200px) {
+  .main {
+    margin: 0 32px;
+    overflow: hidden;
   }
+
+  .raceName, .circuitName {
+    font-size: 3rem;
+    padding-left: 1rem;
+  }
+
+  .section p:first-child {
+    font-size: 2.8rem;
+  }
+
+  .section p:last-child {
+    font-size: 1.5rem;
+  }
+
+  .grid:after {
+    content: "";
+    flex: 1 0 0;
+  }
+
+  .card {
+    flex: 0 0 calc(25% - 20px);
+    margin-bottom: 16px;
+  }
+
+  .card h2, .card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .raceName, .circuitName {
+    font-size: 2.5rem;
+    padding-left: 0.8rem;
+  }
+  .section p:first-child {
+    font-size: 2rem;
+  }
+
+  .section p:last-child {
+    font-size: 0.8rem;
+  }
+  .card {
+    flex: 0 0 calc(33% - 16px);
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .raceName {
+    font-size: 3.2rem;
+  }
+  .title {
+    background: #15151e;
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .circuitName {
+    border: none;
+    padding: 0;
+    padding-bottom: 16px;
+  }
+  .countdown {
+    padding-top: 16px;
+    justify-content: center;
+  }
+  .section p:first-child {
+    font-size: 3rem;
+  }
+  .section p:last-child {
+    font-size: 1rem;
+  }
+  .card {
+    flex: 0 0 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 576px) {
+  .raceName {
+    font-size: 2.4rem;
+  }
+  .circuitName {
+    font-size: 2rem;
+  }
+  .section p:first-child {
+    font-size: 2rem;
+  }
+  .section p:last-child {
+    font-size: 1rem;
+  }
+  .grid {
+    background: #000;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    margin: 0;
+    top: 100vh;
+    left: 0px;
+    padding: 24px 8px;
+    padding-bottom: 20px;
+    height: 100vh;
+    width: 100%;
+    transition: all .3s;
+  }
+  .active {
+    top: 0
+  }
+  .grid:after {
+    display: none;
+  }
+  .card {
+    flex: 0 0 calc(20% - 30px);
+    height: calc(20% - 30px);
+    margin: 0 auto;
+    margin-bottom: 16px;
+    width: calc(100% - 32px);
+  }
+  .card h2, .card p {
+    font-size: 1.5rem;
+  }
+  .closeBtn {
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .closeBtn:before, .closeBtn:after {
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    height: 5px;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+    background-color: #000;
+  }
+  .closeBtn:after {
+    transform: translate(-50%, -50%) rotateZ(135deg);
+  }
+  .arrow {
+    display: block;
+  }
+}
+
+.actionBar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.arrow {
+	width: 40px;
+	height: 40px;
+	margin: 16px 0;
+	-webkit-animation: bounce 2s;
+	        animation: bounce 2s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(12px);
+		        transform: translateY(12px);
+	}
+	60% {
+		-webkit-transform: translateY(8px);
+		        transform: translateY(8px);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(12px);
+		        transform: translateY(12px);
+	}
+	60% {
+		-webkit-transform: translateY(8px);
+		        transform: translateY(8px);
+	}
 }
