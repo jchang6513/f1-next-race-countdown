@@ -1,0 +1,75 @@
+.countdown {
+  border-top: 2px solid #38383f;
+  display: flex;
+  flex: 1 0 0;
+  justify-content: end;
+  text-align: center;
+  padding: 8px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 calc(24% - 8px);
+  margin: 0 4px;
+  max-width: calc(24% - 8px);
+}
+
+.section p {
+  margin: 0;
+}
+
+.section p:first-child {
+  font-family: f1-bold;
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+}
+
+.section p:last-child {
+  color: #949498;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .section p:first-child {
+    font-size: 2.8rem;
+  }
+
+  .section p:last-child {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .section p:first-child {
+    font-size: 2rem;
+  }
+  .section p:last-child {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown {
+    padding-top: 16px;
+    justify-content: center;
+  }
+  .section p:first-child {
+    font-size: 3rem;
+  }
+  .section p:last-child {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section p:first-child {
+    font-size: 2rem;
+  }
+  .section p:last-child {
+    font-size: 1rem;
+  }
+}
