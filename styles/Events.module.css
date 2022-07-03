@@ -17,6 +17,7 @@
   background: #15151e;
   border-radius: 10px;
   flex: 0 0 calc(20% - 20px);
+  z-index: 1;
 }
 
 .event h2 {
