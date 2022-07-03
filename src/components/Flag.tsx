@@ -10,8 +10,8 @@ export const Flag = () => {
 
     const canvas = canvasRef.current
     const c = canvas.getContext("2d") as CanvasRenderingContext2D;
-    const width = 1000;
-    const height = 600;
+    const width = 2000;
+    const height = 1200;
     canvas.width = width;
     canvas.height = height;
 

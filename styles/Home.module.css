@@ -8,6 +8,10 @@
   max-width: 1200px;
 }
 
+.main > *:not(canvas) {
+  z-index: 1;
+}
+
 .main canvas {
   position: fixed;
   min-width: 150vw;
@@ -43,13 +47,8 @@
 }
 
 @media (min-width: 1680px) {
-  .main {
-    transform: scale(1.5);
-  }
-  .main canvas {
-    top: 30%;
-    left: -50vw;
-    transform: scale(0.6) rotateZ(-12deg);
+  .main > *:not(canvas) {
+    transform: scale(1.2);
   }
 }
 
@@ -72,10 +71,6 @@
 }
 
 @media (max-width: 768px) {
-  .main canvas {
-    top: 60%;
-    transform: rotateZ(-20deg);
-  }
   .raceName {
     font-size: 3.2rem;
   }
@@ -84,7 +79,6 @@
     border-radius: 10px;
     flex-direction: column;
     text-align: center;
-    margin-bottom: 120px;
     padding: 1.5rem;
     z-index: 1;
   }
@@ -96,10 +90,18 @@
 }
 
 @media (max-width: 576px) {
+  .main canvas {
+    top: 50%;
+    transform: rotateZ(-20deg);
+    width: 1500px
+  }
   .raceName {
     font-size: 2.4rem;
   }
   .circuitName {
     font-size: 2rem;
+  }
+  .title {
+    margin-bottom: 120px;
   }
 }

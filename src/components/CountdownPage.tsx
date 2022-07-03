@@ -10,16 +10,18 @@ export const CountdownPage = ({ nextRace }: { nextRace: Race }) => {
   return (
     <main className={styles.main}>
       <Flag />
-      <h1 className={styles.raceName}>
-        {raceName}
-      </h1>
-      <div className={styles.title}>
-        <h1 className={styles.circuitName}>
-          {Circuit.circuitName}
+      <div>
+        <h1 className={styles.raceName}>
+          {raceName}
         </h1>
-        <Countdown nextRace={nextRace} />
+        <div className={styles.title}>
+          <h1 className={styles.circuitName}>
+            {Circuit.circuitName}
+          </h1>
+          <Countdown nextRace={nextRace} />
+        </div>
+        <Events nextRace={nextRace} />
       </div>
-      <Events nextRace={nextRace} />
     </main>
   )
 }

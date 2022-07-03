@@ -18,6 +18,9 @@
   border-radius: 10px;
   flex: 0 0 calc(20% - 20px);
   z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .event h2 {
@@ -92,8 +95,8 @@
     display: none;
   }
   .event {
-    flex: 0 0 calc(21% - 30px);
-    height: calc(21% - 30px);
+    flex: 0 0 calc(21% - 35px);
+    height: calc(21% - 35px);
     margin: 0 auto;
     margin-bottom: 16px;
     padding: 16px;
