@@ -80,9 +80,10 @@
     left: 0px;
     padding: 24px 8px;
     padding-bottom: 20px;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     transition: all .3s;
+    z-index: 1;
   }
   .active {
     top: 0
@@ -91,14 +92,18 @@
     display: none;
   }
   .event {
-    flex: 0 0 calc(20% - 30px);
-    height: calc(20% - 30px);
+    flex: 0 0 calc(21% - 30px);
+    height: calc(21% - 30px);
     margin: 0 auto;
     margin-bottom: 16px;
+    padding: 16px;
     width: calc(100% - 32px);
   }
+  .event h2 {
+    margin-bottom: 8px;
+  }
   .event h2, .event p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .closeBtn {
     background-color: #fff;
