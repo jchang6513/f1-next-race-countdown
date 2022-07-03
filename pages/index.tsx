@@ -28,6 +28,7 @@ export async function getStaticProps() {
     props: {
       nextRace,
     },
+    revalidate: 3600,
   }
 }
 
