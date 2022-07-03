@@ -24,4 +24,11 @@ export type Race = {
   SecondPractice: RaceDateTime;
   ThirdPractice: RaceDateTime;
   Qualifying: RaceDateTime;
+  Sprint: RaceDateTime;
 };
+
+export type Event =   {
+  key: 'FirstPractice' | 'SecondPractice' | 'ThirdPractice' | 'Qualifying' | 'Sprint';
+  label: string;
+  time?: string;
+}

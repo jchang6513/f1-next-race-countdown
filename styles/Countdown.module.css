@@ -5,6 +5,7 @@
   justify-content: end;
   text-align: center;
   padding: 8px;
+  max-width: 400px;
 }
 
 .section {
@@ -32,6 +33,43 @@
   font-size: 1.5rem;
 }
 
+.countdown a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.countdown a h2 {
+  font-size: 4rem;
+  margin: 0;
+  margin-right: 24px;
+}
+
+.liveEvents {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.liveFixed, .liveAnimate {
+  position: absolute;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #e10600;
+  border-radius: 100%;
+}
+
+.liveAnimate {
+  transform: scale(1);
+  animation: 1s infinite record;
+  transition: 1s all linear;
+}
+
+
 @media (max-width: 1200px) {
   .section p:first-child {
     font-size: 2.8rem;
@@ -40,7 +78,9 @@
   .section p:last-child {
     font-size: 1.5rem;
   }
-
+  .countdown a h2 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -50,18 +90,25 @@
   .section p:last-child {
     font-size: 0.8rem;
   }
+  .countdown a h2 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .countdown {
     padding-top: 16px;
     justify-content: center;
+    max-width: none;
   }
   .section p:first-child {
     font-size: 3rem;
   }
   .section p:last-child {
     font-size: 1rem;
+  }
+  .countdown a h2 {
+    margin-right: 8px;
   }
 }
 
@@ -71,5 +118,16 @@
   }
   .section p:last-child {
     font-size: 1rem;
+  }
+}
+
+@keyframes record {
+  from {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
   }
 }

@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Race } from '../types';
 import { localTime } from '../utils';
 import styles from '../../styles/Events.module.css'
+import { useEvents } from '../hooks/useEvents';
 
 export const Events = ({ nextRace }: { nextRace: Race }) => {
   const [mobileGridToggle, setMobileGridToggle] = useState(false)
+  const events = useEvents(nextRace)
 
   return (
     <>
@@ -14,22 +16,12 @@ export const Events = ({ nextRace }: { nextRace: Race }) => {
         </svg>
       </div>
       <div className={`${styles.events} ${mobileGridToggle ? styles.active : ''}`}>
-        <div className={styles.event}>
-          <h2>First Practice</h2>
-          <p>{localTime(nextRace.FirstPractice)}</p>
-        </div>
-        <div className={styles.event}>
-          <h2>Second Practice</h2>
-          <p>{localTime(nextRace.SecondPractice)}</p>
-        </div>
-        <div className={styles.event}>
-          <h2>Third Practice</h2>
-          <p>{localTime(nextRace.ThirdPractice)}</p>
-        </div>
-        <div className={styles.event}>
-          <h2>Qualifying</h2>
-          <p>{localTime(nextRace.Qualifying)}</p>
-        </div>
+        {events.map(({ key, label, time }) => (
+          <div key={key} className={styles.event}>
+            <h2>{label}</h2>
+            <p>{time}</p>
+          </div>
+        ))}
         <div className={styles.event}>
           <h2>Race</h2>
           <p>{localTime(nextRace)}</p>

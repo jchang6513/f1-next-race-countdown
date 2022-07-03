@@ -22,7 +22,7 @@ export async function getStaticProps() {
   const races = (await res.json())?.MRData?.RaceTable?.Races as Race[]
 
   const currentDate = Number(new Date())
-  const nextRace = races.find((race) => Number(new Date(race.date)) > currentDate)
+  const nextRace = races.find((race) => Number(new Date(`${race.date} ${race.time}`)) > currentDate - 7200000)
 
   return {
     props: {
